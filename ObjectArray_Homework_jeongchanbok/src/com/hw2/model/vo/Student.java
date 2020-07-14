@@ -77,8 +77,4 @@ public class Student {
 		
 	}
 	
-	public String average() {
-		return "Æò±Õ Á¡¼ö : " + (kor+eng+math)/3;
-	}
-	
 }

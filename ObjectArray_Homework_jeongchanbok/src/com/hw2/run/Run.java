@@ -37,42 +37,34 @@ public class Run {
 			int math = sc.nextInt();
 			
 			// 입력 받은 정보들을 가지고 배열의 count 인덱스에 매개변수 생성자를 통해 객체 생성
-			
+			for(int i = 0; i<arr.length; i++) {
 				
-				arr[count] = new Student(grade, classroom, name, kor, eng, math);
-				// 한 명씩 추가 되었기 때문에 count 1증가
+				arr[i] = new Student(grade, classroom, name, kor, eng, math);
 				count++;
-
-				sc.nextLine();
 				
-				
-				// 계속 추가할 것인지 물어보고, ‘n’ 입력 시 반복문 빠져나감
 				System.out.print("계속 추가하나요?(y/n) : ");
 				char yn = sc.nextLine().charAt(0);
 				
 				if(yn == 'n') {
-		// 현재 배열에 담겨있는 학생들의 정보를 모두 출력
-						break;
+					break;
 				}
-				if(yn == 'y') {
 				
-					continue;
+				for(Student a : arr) {
+					System.out.println(a);
 				}
-					
-				}
-				for(int j = 0; j<count; j++) {
-					System.out.println(arr[j].information() +" " + arr[j].average());
-					
-		}	
-	
+			}
+			
+			// 한 명씩 추가 되었기 때문에 count 1증가
+			
+			
+			// 계속 추가할 것인지 물어보고, ‘n’ 입력 시 반복문 빠져나감
+			
+			
+			// 현재 배열에 담겨있는 학생들의 정보를 모두 출력
+			
+		}
 		
-	
-	
+		
 	}
-	
-	
-	
-	
+
 }
-
-
