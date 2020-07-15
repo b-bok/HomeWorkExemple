@@ -31,7 +31,90 @@ public class MemberController {
 		return mem;
 		}
 
-	
+	public Member checkId(String userId) {
+		Member m = null; // 아이디로 검색된 결과를 담을 변수 초기화
 		
+		// mem 에서 매개변수로 전달받은 userId와 동일한 아이디를 가지고 있는 회원을 m에 대입
+		for(int i = 0; i<memberCount; i++) {
+			
+			if(mem[i].getUserId().equals(userId)) {
+				m = mem[i];
+			}
+		}
+		
+		// m 리턴
+		return m;
+		
+		}
+		
+	public void insertMember(Member m) {
+		// 매개변수로 전달받은 회원객체를 mem 배열에 추가
+		mem[memberCount++] = m;
+		// memberCount 1 증가
+		}
 	
-}
+	public Member searchMember(int menu, String search) {
+		Member searchMember = null; // 검색된 회원 정보를 담을 변수 초기화
+		// 매개변수로 전달받은 search 문자열을 menu 번호에 따라
+		for(int i = 0; i<memberCount;i++) {
+			// 1 인 경우 아이디로 검색 후 결과를 searchMember에 대입하고
+			if(menu == 1 && mem[i].getUserId().equals(search)) {
+				searchMember = mem[i];
+			// 2 인 경우 이름으로 검색 후 결과를 searchMember에 대입하고
+			}else if(menu == 2 && mem[i].getName().equals(search)) {
+				searchMember = mem[i];
+			// 3 인 경우 이메일로 검색 후 결과를 searchMember에 대입하고	
+			}else if(menu == 3 && mem[i].getEmail().equals(search)) {
+				searchMember = mem[i];
+			}
+			
+		}
+		// searchMember 주소 값 리턴
+		return searchMember;
+	
+		}
+
+	public void updateMember(Member m, int menu, String update) {
+		
+		// 매개변수로 전달받은 m 회원과 변경 내용인 update 문자열을 menu에 따라
+		for(int i =0; i<memberCount; i++) {
+			// 1 인 경우 setter 메소드를 이용하여 m의 비밀번호를 update 문자열로 변경
+			if(menu == 1) {
+				m.setUserPwd(update);
+			// 2 인 경우 setter 메소드를 이용하여 m의 이름을 update 문자열로 변경	
+			}else if(menu == 2) {
+				m.setName(update);
+			// 3 인 경우 setter 메소드를 이용하여 m의 이메일을 update 문자열로 변경	
+			}else if(menu == 3) {
+				m.setEmail(update);
+			}
+			
+			
+		}
+	
+	}
+	
+	
+	// 매개변수로 전달받은 userId가 mem에 존재하는 경우 해당 회원 삭제 후
+	// 다음 인덱스 객체들의 정보를 한 칸씩 앞으로 이동 시킴
+	// memberCount 1 감소
+
+	public void deleteMember(String userId) {
+		
+		for(int i =0; i<memberCount; i++) {
+			for(int j = 0; j<i; j++) {
+				
+				if(mem[j].getUserId().equals(userId)) {
+					
+					Member temp = mem[i];
+					mem[i] = mem[j];
+					mem[j] = temp;
+
+				}	
+			}
+			
+		}
+		memberCount--;
+	}
+}	
+
