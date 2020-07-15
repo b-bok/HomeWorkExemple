@@ -5,36 +5,36 @@ import com.mvc.model.vo.Member;
 public class MemberController {
 
 	
-	public static final int SIZE = 10; // ÃÖ´ë È¸¿ø ¼ö »ó¼öÇÊµå·Î 10 ÃÊ±âÈ­
-	private int memberCount;			// ÇöÀç È¸¿ø ¼ö ÇÊµå
-	private Member[] mem = new Member[SIZE];  //È¸¿øµéÀÇ Á¤º¸¸¦ ´ã´Â °´Ã¼ ¹è¿­
+	public static final int SIZE = 10; // ìµœëŒ€ íšŒì› ìˆ˜ ìƒìˆ˜í•„ë“œë¡œ 10 ì´ˆê¸°í™”
+	private int memberCount;			// í˜„ì¬ íšŒì› ìˆ˜ í•„ë“œ
+	private Member[] mem = new Member[SIZE];  //íšŒì›ë“¤ì˜ ì •ë³´ë¥¼ ë‹´ëŠ” ê°ì²´ ë°°ì—´
 	
 	
-	// ÃÊ±âÈ­ ºí·°À» ÀÌ¿ëÇÏ¿© ±âº»ÀûÀÎ È¸¿ø 5¸íÀÇ Á¤º¸ ÃÊ±âÈ­, memberCount ¼ö 5 ÃÊ±âÈ­
+	// ì´ˆê¸°í™” ë¸”ëŸ­ì„ ì´ìš©í•˜ì—¬ ê¸°ë³¸ì ì¸ íšŒì› 5ëª…ì˜ ì •ë³´ ì´ˆê¸°í™”, memberCount ìˆ˜ 5 ì´ˆê¸°í™”
 	{
-		mem[0] = new Member("user01", "pass01", "±èÀ¯½Å", 20, 'M', "kim12@naver.com");
-		mem[1] = new Member("user02", "pass02", "ÀÌ¼ø½Å", 60, 'M', "lee2@naver.com");
-		mem[2] = new Member("user03", "pass03", "À¯°ü¼ø", 17, 'F', "yo5@hanmail.net");
-		mem[3] = new Member("user04", "pass04", "¿¬°³¼Ò¹®", 57, 'M', "yeon@gmail.com");
-		mem[4] = new Member("user05", "pass05", "½Å»çÀÓ´ç", 45, 'F', "shin@naver.com");
+		mem[0] = new Member("user01", "pass01", "ê¹€ìœ ì‹ ", 20, 'M', "kim12@naver.com");
+		mem[1] = new Member("user02", "pass02", "ì´ìˆœì‹ ", 60, 'M', "lee2@naver.com");
+		mem[2] = new Member("user03", "pass03", "ìœ ê´€ìˆœ", 17, 'F', "yo5@hanmail.net");
+		mem[3] = new Member("user04", "pass04", "ì—°ê°œì†Œë¬¸", 57, 'M', "yeon@gmail.com");
+		mem[4] = new Member("user05", "pass05", "ì‹ ì‚¬ì„ë‹¹", 45, 'F', "shin@naver.com");
 		memberCount = 5;
 	}
 	
 	public int getMemberCount() {
 		
-		// memberCount ¸®ÅÏ
+		// memberCount ë¦¬í„´
 		return memberCount;
 		}
 
 	public Member[] getMem() {
-		// mem ÁÖ¼Ò °ª ¸®ÅÏ
+		// mem ì£¼ì†Œ ê°’ ë¦¬í„´
 		return mem;
 		}
 
 	public Member checkId(String userId) {
-		Member m = null; // ¾ÆÀÌµğ·Î °Ë»öµÈ °á°ú¸¦ ´ãÀ» º¯¼ö ÃÊ±âÈ­
+		Member m = null; // ì•„ì´ë””ë¡œ ê²€ìƒ‰ëœ ê²°ê³¼ë¥¼ ë‹´ì„ ë³€ìˆ˜ ì´ˆê¸°í™”
 		
-		// mem ¿¡¼­ ¸Å°³º¯¼ö·Î Àü´Ş¹ŞÀº userId¿Í µ¿ÀÏÇÑ ¾ÆÀÌµğ¸¦ °¡Áö°í ÀÖ´Â È¸¿øÀ» m¿¡ ´ëÀÔ
+		// mem ì—ì„œ ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë°›ì€ userIdì™€ ë™ì¼í•œ ì•„ì´ë””ë¥¼ ê°€ì§€ê³  ìˆëŠ” íšŒì›ì„ mì— ëŒ€ì…
 		for(int i = 0; i<memberCount; i++) {
 			
 			if(mem[i].getUserId().equals(userId)) {
@@ -42,49 +42,49 @@ public class MemberController {
 			}
 		}
 		
-		// m ¸®ÅÏ
+		// m ë¦¬í„´
 		return m;
 		
 		}
 		
 	public void insertMember(Member m) {
-		// ¸Å°³º¯¼ö·Î Àü´Ş¹ŞÀº È¸¿ø°´Ã¼¸¦ mem ¹è¿­¿¡ Ãß°¡
+		// ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë°›ì€ íšŒì›ê°ì²´ë¥¼ mem ë°°ì—´ì— ì¶”ê°€
 		mem[memberCount++] = m;
-		// memberCount 1 Áõ°¡
+		// memberCount 1 ì¦ê°€
 		}
 	
 	public Member searchMember(int menu, String search) {
-		Member searchMember = null; // °Ë»öµÈ È¸¿ø Á¤º¸¸¦ ´ãÀ» º¯¼ö ÃÊ±âÈ­
-		// ¸Å°³º¯¼ö·Î Àü´Ş¹ŞÀº search ¹®ÀÚ¿­À» menu ¹øÈ£¿¡ µû¶ó
+		Member searchMember = null; // ê²€ìƒ‰ëœ íšŒì› ì •ë³´ë¥¼ ë‹´ì„ ë³€ìˆ˜ ì´ˆê¸°í™”
+		// ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë°›ì€ search ë¬¸ìì—´ì„ menu ë²ˆí˜¸ì— ë”°ë¼
 		for(int i = 0; i<memberCount;i++) {
-			// 1 ÀÎ °æ¿ì ¾ÆÀÌµğ·Î °Ë»ö ÈÄ °á°ú¸¦ searchMember¿¡ ´ëÀÔÇÏ°í
+			// 1 ì¸ ê²½ìš° ì•„ì´ë””ë¡œ ê²€ìƒ‰ í›„ ê²°ê³¼ë¥¼ searchMemberì— ëŒ€ì…í•˜ê³ 
 			if(menu == 1 && mem[i].getUserId().equals(search)) {
 				searchMember = mem[i];
-			// 2 ÀÎ °æ¿ì ÀÌ¸§À¸·Î °Ë»ö ÈÄ °á°ú¸¦ searchMember¿¡ ´ëÀÔÇÏ°í
+			// 2 ì¸ ê²½ìš° ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰ í›„ ê²°ê³¼ë¥¼ searchMemberì— ëŒ€ì…í•˜ê³ 
 			}else if(menu == 2 && mem[i].getName().equals(search)) {
 				searchMember = mem[i];
-			// 3 ÀÎ °æ¿ì ÀÌ¸ŞÀÏ·Î °Ë»ö ÈÄ °á°ú¸¦ searchMember¿¡ ´ëÀÔÇÏ°í	
+			// 3 ì¸ ê²½ìš° ì´ë©”ì¼ë¡œ ê²€ìƒ‰ í›„ ê²°ê³¼ë¥¼ searchMemberì— ëŒ€ì…í•˜ê³ 	
 			}else if(menu == 3 && mem[i].getEmail().equals(search)) {
 				searchMember = mem[i];
 			}
 			
 		}
-		// searchMember ÁÖ¼Ò °ª ¸®ÅÏ
+		// searchMember ì£¼ì†Œ ê°’ ë¦¬í„´
 		return searchMember;
 	
 		}
 
 	public void updateMember(Member m, int menu, String update) {
 		
-		// ¸Å°³º¯¼ö·Î Àü´Ş¹ŞÀº m È¸¿ø°ú º¯°æ ³»¿ëÀÎ update ¹®ÀÚ¿­À» menu¿¡ µû¶ó
+		// ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë°›ì€ m íšŒì›ê³¼ ë³€ê²½ ë‚´ìš©ì¸ update ë¬¸ìì—´ì„ menuì— ë”°ë¼
 		for(int i =0; i<memberCount; i++) {
-			// 1 ÀÎ °æ¿ì setter ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© mÀÇ ºñ¹Ğ¹øÈ£¸¦ update ¹®ÀÚ¿­·Î º¯°æ
+			// 1 ì¸ ê²½ìš° setter ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ mì˜ ë¹„ë°€ë²ˆí˜¸ë¥¼ update ë¬¸ìì—´ë¡œ ë³€ê²½
 			if(menu == 1) {
 				m.setUserPwd(update);
-			// 2 ÀÎ °æ¿ì setter ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© mÀÇ ÀÌ¸§À» update ¹®ÀÚ¿­·Î º¯°æ	
+			// 2 ì¸ ê²½ìš° setter ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ mì˜ ì´ë¦„ì„ update ë¬¸ìì—´ë¡œ ë³€ê²½	
 			}else if(menu == 2) {
 				m.setName(update);
-			// 3 ÀÎ °æ¿ì setter ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© mÀÇ ÀÌ¸ŞÀÏÀ» update ¹®ÀÚ¿­·Î º¯°æ	
+			// 3 ì¸ ê²½ìš° setter ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ mì˜ ì´ë©”ì¼ì„ update ë¬¸ìì—´ë¡œ ë³€ê²½	
 			}else if(menu == 3) {
 				m.setEmail(update);
 			}
@@ -95,9 +95,9 @@ public class MemberController {
 	}
 	
 	
-	// ¸Å°³º¯¼ö·Î Àü´Ş¹ŞÀº userId°¡ mem¿¡ Á¸ÀçÇÏ´Â °æ¿ì ÇØ´ç È¸¿ø »èÁ¦ ÈÄ
-	// ´ÙÀ½ ÀÎµ¦½º °´Ã¼µéÀÇ Á¤º¸¸¦ ÇÑ Ä­¾¿ ¾ÕÀ¸·Î ÀÌµ¿ ½ÃÅ´
-	// memberCount 1 °¨¼Ò
+	// ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬ë°›ì€ userIdê°€ memì— ì¡´ì¬í•˜ëŠ” ê²½ìš° í•´ë‹¹ íšŒì› ì‚­ì œ í›„
+	// ë‹¤ìŒ ì¸ë±ìŠ¤ ê°ì²´ë“¤ì˜ ì •ë³´ë¥¼ í•œ ì¹¸ì”© ì•ìœ¼ë¡œ ì´ë™ ì‹œí‚´
+	// memberCount 1 ê°ì†Œ
 
 	public void deleteMember(String userId) {
 		
@@ -114,6 +114,7 @@ public class MemberController {
 			}
 			
 		}
+		mem[memberCount-1] = null; //mem[memberCount-1] ìœ„ì¹˜ì— ì‚­ì œí•˜ë ¤ëŠ” ê°ì²´ê°€ ë“¤ì–´ìˆìœ¼ë¯€ë¡œ ì§€ì›Œì£¼ì! ì•ˆì§€ì›Œë„ í”„ë¡œê·¸ë¨ì€ ì •ìƒë™ì‘í•˜ì§€ë§Œ, ë©”ëª¨ë¦¬ì—” ë‚¨ì•„ìˆìœ¼ë‹ˆê¹Œ :)
 		memberCount--;
 	}
 }	
