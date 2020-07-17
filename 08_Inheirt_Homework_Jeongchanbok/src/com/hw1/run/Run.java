@@ -9,77 +9,82 @@ public class Run {
 	
 	public static void main(String[] args) {
 
-		// 3¸íÀÇ ÇĞ»ı Á¤º¸¸¦ ±â·ÏÇÒ ¼ö ÀÖ°Ô °´Ã¼ ¹è¿­ ÇÒ´ç (Student[])
+		// 3ëª…ì˜ í•™ìƒ ì •ë³´ë¥¼ ê¸°ë¡í•  ìˆ˜ ìˆê²Œ ê°ì²´ ë°°ì—´ í• ë‹¹ (Student[])
 		Student[] sArr = new Student[3];
 		
-		// À§ÀÇ »ç¿ëµ¥ÀÌÅÍ Âü°íÇÏ¿© 3¸íÀÇ ÇĞ»ı Á¤º¸ ÃÊ±âÈ­
-		sArr[0] = new Student("È«±æµ¿", 20, 178.2,70.0, 1,"Á¤º¸½Ã½ºÅÛÇĞ°ú");
-		sArr[1] = new Student("±è¸»¶Ë", 21, 187.3,80.0, 2,"°æ¿µÇĞ°ú");
-		sArr[2] = new Student("°­°³¼ø", 23, 167.0,45.0, 4,"Á¤º¸Åë½Å°øÇĞ°ú");
+		// ìœ„ì˜ ì‚¬ìš©ë°ì´í„° ì°¸ê³ í•˜ì—¬ 3ëª…ì˜ í•™ìƒ ì •ë³´ ì´ˆê¸°í™”
+		sArr[0] = new Student("í™ê¸¸ë™", 20, 178.2,70.0, 1,"ì •ë³´ì‹œìŠ¤í…œí•™ê³¼");
+		sArr[1] = new Student("ê¹€ë§ë˜¥", 21, 187.3,80.0, 2,"ê²½ì˜í•™ê³¼");
+		sArr[2] = new Student("ê°•ê°œìˆœ", 23, 167.0,45.0, 4,"ì •ë³´í†µì‹ ê³µí•™ê³¼");
 		
-		// À§ÀÇ ÇĞ»ı Á¤º¸ ¸ğµÎ Ãâ·Â 
+		// ìœ„ì˜ í•™ìƒ ì •ë³´ ëª¨ë‘ ì¶œë ¥ 
 		for(int i =0; i<sArr.length;i++) {
 			
 			System.out.println(sArr[i].information());
 		}
 		
-		// ÃÖ´ë 10¸íÀÇ »ç¿ø Á¤º¸¸¦ ±â·ÏÇÒ ¼ö ÀÖ°Ô ¹è¿­À» ÇÒ´ç (Employee[])
+		// ìµœëŒ€ 10ëª…ì˜ ì‚¬ì› ì •ë³´ë¥¼ ê¸°ë¡í•  ìˆ˜ ìˆê²Œ ë°°ì—´ì„ í• ë‹¹ (Employee[])
 		Employee[] eArr = new Employee[10];
-		// »ç¿øµéÀÇ Á¤º¸¸¦ Å°º¸µå·Î °è¼Ó ÀÔ·Â ¹Ş°í --> while(true) ¹«ÇÑ ¹İº¹¹®À» ÅëÇØ
+		// ì‚¬ì›ë“¤ì˜ ì •ë³´ë¥¼ í‚¤ë³´ë“œë¡œ ê³„ì† ì…ë ¥ ë°›ê³  --> while(true) ë¬´í•œ ë°˜ë³µë¬¸ì„ í†µí•´
 		
 		int count = 0;
 		
 		while(true) {
 			
-			System.out.print("ÀÌ¸§ : ");
+			System.out.print("ì´ë¦„ : ");
 			String name = sc.nextLine();
 			
-			System.out.print("³ªÀÌ : ");
+			System.out.print("ë‚˜ì´ : ");
 			int age = sc.nextInt();
 			
 			sc.nextLine();
-			System.out.print("Å° : ");
+			System.out.print("í‚¤ : ");
 			double height = sc.nextDouble();
 			
 			sc.nextLine();
-			System.out.print("¸ö¹«°Ô : ");
+			System.out.print("ëª¸ë¬´ê²Œ : ");
 			double weight = sc.nextDouble();
 			
 			sc.nextLine();
-			System.out.print("±Ş¿© : ");
+			System.out.print("ê¸‰ì—¬ : ");
 			int salary = sc.nextInt();
 			
 			sc.nextLine();
-			System.out.print("ºÎ¼­ : ");
+			System.out.print("ë¶€ì„œ : ");
 			String dept = sc.nextLine();
 			
-			// ÇÑ ¸í¾¿ Ãß°¡ µÉ ¶§¸¶´Ù Ä«¿îÆ®ÇÔ
+			// í•œ ëª…ì”© ì¶”ê°€ ë  ë•Œë§ˆë‹¤ ì¹´ìš´íŠ¸í•¨
 			
 			
 			count++;
-			
+			/*
 			for(int i = 0; i<count; i++) {
-				// ÀÔ·Â¹ŞÀº Á¤º¸µéÀ» °¡Áö°í ¸Å°³º¯¼ö »ı¼ºÀÚ¸¦ ÀÌ¿ëÇÏ¿© °´Ã¼¹è¿­¿¡ °´Ã¼ »ı¼º
-				// ÀÔ·ÂµÈ Á¤º¸°¡ ¾øÀ» ¶§¸¸ °ª Ãß°¡ÇÕ´Ï´Ù.
+				// ì…ë ¥ë°›ì€ ì •ë³´ë“¤ì„ ê°€ì§€ê³  ë§¤ê°œë³€ìˆ˜ ìƒì„±ìë¥¼ ì´ìš©í•˜ì—¬ ê°ì²´ë°°ì—´ì— ê°ì²´ ìƒì„±
+				// ì…ë ¥ëœ ì •ë³´ê°€ ì—†ì„ ë•Œë§Œ ê°’ ì¶”ê°€í•©ë‹ˆë‹¤.
 				if(eArr[i] == null) {
 					
 					eArr[i] = new Employee(name, age, height, weight, salary, dept);
 				}
 	
 			}
+			*/
+			eArr[count] = new Employee(name, age, height, weight, salary, dept);
+			// êµ³ì´ forë¬¸ì„ ì‚¬ìš©í•  í•„ìš”ê°€ ì—†ë‹¤.
 			
-			// °è¼Ó Ãß°¡ÇÒ °ÍÀÎÁö ¹°¾îº¸°í, ´ë¼Ò¹®ÀÚ »ó°ü¾øÀÌ ¡®y¡¯ÀÌ¸é °è¼Ó °´Ã¼ Ãß°¡
-			System.out.print("°è¼Ó Ãß°¡ÇÏ½Ã°Ú½À´Ï±î? : ");
+			
+			
+			// ê³„ì† ì¶”ê°€í•  ê²ƒì¸ì§€ ë¬¼ì–´ë³´ê³ , ëŒ€ì†Œë¬¸ì ìƒê´€ì—†ì´ â€˜yâ€™ì´ë©´ ê³„ì† ê°ì²´ ì¶”ê°€
+			System.out.print("ê³„ì† ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ? : ");
 			char yn = sc.nextLine().charAt(0);
 			
 			if(yn == 'y' || yn == 'Y') {
 				
 				continue;
 				
-			// ¡®n¡¯ÀÏ °æ¿ì ´õ ÀÌ»ó ±×¸¸ ÀÔ·Â ¹Şµµ·Ï..	
+			// â€˜nâ€™ì¼ ê²½ìš° ë” ì´ìƒ ê·¸ë§Œ ì…ë ¥ ë°›ë„ë¡..	
 			}else if (yn == 'n') {
 				for(int i =0; i<count;i++) {
-					// ¹è¿­¿¡ ´ã±ä »ç¿øµéÀÇ Á¤º¸¸¦ ¸ğµÎ Ãâ·Â
+					// ë°°ì—´ì— ë‹´ê¸´ ì‚¬ì›ë“¤ì˜ ì •ë³´ë¥¼ ëª¨ë‘ ì¶œë ¥
 					System.out.println(eArr[i].information());
 					
 				}
