@@ -53,31 +53,19 @@ public class Run {
 			System.out.print("부서 : ");
 			String dept = sc.nextLine();
 			
+			
+			
+			eArr[count] = new Employee(name, age, height, weight, salary, dept);
+			
 			// 한 명씩 추가 될 때마다 카운트함
-			
-			
 			count++;
-			
-			for(int i = 0; i<count; i++) {
-				// 입력받은 정보들을 가지고 매개변수 생성자를 이용하여 객체배열에 객체 생성
-				// 입력된 정보가 없을 때만 값 추가합니다.
-				if(eArr[i] == null) {
-					
-					eArr[i] = new Employee(name, age, height, weight, salary, dept);
-				}
-	
-			}
 			
 			// 계속 추가할 것인지 물어보고, 대소문자 상관없이 ‘y’이면 계속 객체 추가
 			System.out.print("계속 추가하시겠습니까? : ");
 			char yn = sc.nextLine().charAt(0);
 			
-			if(yn == 'y' || yn == 'Y') {
-				
-				continue;
-				
-			// ‘n’일 경우 더 이상 그만 입력 받도록..	
-			}else if (yn == 'n') {
+			
+			if (yn == 'n') { //추가하지 않는다고 대답했을 때
 				for(int i =0; i<count;i++) {
 					// 배열에 담긴 사원들의 정보를 모두 출력
 					System.out.println(eArr[i].information());
