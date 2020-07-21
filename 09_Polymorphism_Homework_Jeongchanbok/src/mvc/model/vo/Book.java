@@ -42,7 +42,7 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return "도서명 : " + title + ", 저자명 : " + author + ", 출판사명 : " + publisher;
+		return title + ", 저자명 : " + author + ", 출판사명 : " + publisher;
 		
 	}
 	

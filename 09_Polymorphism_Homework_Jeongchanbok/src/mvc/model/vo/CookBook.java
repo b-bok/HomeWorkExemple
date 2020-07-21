@@ -22,7 +22,7 @@ public class CookBook extends Book {
 	
 	@Override
 	public String toString() {
-		return super.toString() + ", 요리학원 쿠폰 유무 : " + (coupon ? "있음" : "없음");
+		return super.toString() + ", 요리학원 쿠폰 유무 : " + coupon;
 	}
 	
 }
