@@ -1,5 +1,6 @@
 package model.vo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -70,9 +71,11 @@ public class Book {
 	public String toString() {
 		
 		// 출판일(Date) 형식을 SimpleDateFormat을 이용하여 "0000년 00월 00일" 형태의 문자열로 반환한 값을 이용
+		SimpleDateFormat date = new SimpleDateFormat("yyyy년 MM월 dd일");
+		String publishDate = date.format(this.publishDate);
 		
 		return "Book [title=" + title + ", author=" + author + ", publisher=" + publisher + ", publishDate="
-				 /*  */ + ", price=" + price + "]";
+				 + publishDate + ", price=" + price + "]";
 	}
 
 }
