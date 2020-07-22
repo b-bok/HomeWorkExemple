@@ -46,7 +46,24 @@ public class LibraryManager {
 			// 전달받은 keyword를 포함하고 있으면  HINT : String 클래스의 contains() 참고
 			if(bList[i].getTitle().contains(keyword)) {
 				// 검색결과의 도서목록에 담기  HINT : count 이용
+	
+				searchList[count++] = bList[i];
+				
+				/*
 				count = i;
+				카운트에  i 값을 담아준다!
+				
+				아래와 같은 방식은 차곡차곡 정보를 담아주지 못한다.
+				예를 들어 키워드 검색에 루피의 원피스를 입력했을 경우,
+				찾는 키워드가 bList[2]에 있고 searchList[2]에 저장 되기 때문이다. 
+				searchList[0]부터 차례대로 담기지 않고, null 값이 담기다가
+				searchList[2]에만 bList[2]가 담긴다!
+				즉, searchList를 모두 출력했을 때 {null,null,bList[2]의 값, null, null,null}
+				이렇게 담긴다!
+				
+				searchList[count++] = bList[i]; 이렇게 입력해야!
+				searchList[0]부터 검색한 키워드가 있을 경우 차곡 차곡 담긴다!
+				
 				
 				if(bList[i] instanceof AniBook) {
 					searchList[count] = new AniBook(bList[count].getTitle(), bList[count].getAuthor(), bList[count].getPublisher(), ((AniBook)bList[count]).getAccessAge());
@@ -56,6 +73,9 @@ public class LibraryManager {
 					searchList[count] = new CookBook(bList[count].getTitle(), bList[count].getAuthor(), bList[count].getPublisher(), ((CookBook)bList[count]).isCoupon());
 				}
 				
+	
+				
+				*/
 			}
 		}
 

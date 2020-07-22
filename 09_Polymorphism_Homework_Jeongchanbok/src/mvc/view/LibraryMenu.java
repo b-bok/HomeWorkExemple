@@ -83,16 +83,17 @@ public class LibraryMenu {
 		
 		Book[] searchList = lm.searchBook(keyword);
 		// for each문(향상된 for문)을 이용하여 검색 결과의 도서 목록 출력
-		for(int i = 0; i<searchList.length;i++) {
-			if(searchList[i] != null) {
-				System.out.println(searchList[i]);
-				
+		for(Book b : searchList) {
+			if(b != null) {
+				System.out.println(b);
 			}
+	
+		}
 
 		}
 
-	}
 	
+
 	public void rentBook() {
 		// 도서 대여를 위해 도서번호를 알아야 된다.
 		// selectAll() 메소드 호출을 통해 도서 리스트 한번 출력 해주고
