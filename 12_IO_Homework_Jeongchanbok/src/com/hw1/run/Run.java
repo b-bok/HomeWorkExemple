@@ -25,10 +25,10 @@ public class Run {
 			
 			switch(num) {
 			case 1 : fd.fileSave(); break;
-			case 2 : //fd.fileOpen(); break;
-			case 3 : //fd.fileEdit(); break;
+			case 2 : fd.fileOpen(); break;
+			case 3 : fd.fileEdit(); break;
 			case 4 : return; 
-				
+			default : System.out.println("잘못 입력 하셨습니다.");	
 			}
 			
 			
